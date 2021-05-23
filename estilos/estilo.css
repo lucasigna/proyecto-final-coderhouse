@@ -1,0 +1,624 @@
+@charset "UTF-8";
+/* Variables */
+/* Mixins */
+/* Para vista en PC */
+/* Estilos generales */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #F7F7FF;
+}
+
+p {
+  color: #7A542E;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-weight: normal;
+  font-size: 18px;
+}
+
+h1 {
+  color: #7A542E;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+h2 {
+  color: #7A542E;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.container {
+  padding: 0;
+  margin: 0;
+}
+
+.header {
+  z-index: 5;
+  /* Para que el header quede por encima de todo */
+  padding: 10px 20px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: #F7F7FF;
+  border-bottom: 1px solid #7A542E;
+}
+
+.header .header__navbar .header__navbar__a {
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+}
+
+.header .header__navbar .header__navbar__a__logo {
+  height: 80px;
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+}
+
+.header .header__navbar .header__navbar__a__logo:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.header .header__navbar .header__navbar__a:active {
+  -webkit-transform: rotate(30deg);
+          transform: rotate(30deg);
+  /* Pequeño movimiento al hacer click para generar interactividad */
+}
+
+.header .header__navbar__menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  list-style: none;
+  padding: 25px 30px;
+  margin: 0;
+}
+
+.header .header__navbar__menu .header__navbar__menu__li__a {
+  display: inline-block;
+  /* Agrego esto para poder aplicar el transform en el hover */
+  text-align: center;
+  color: #7A542E;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-weight: normal;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 5px 20px;
+  -webkit-transition: all 0.2s ease, -webkit-transform 0.5s ease;
+  transition: all 0.2s ease, -webkit-transform 0.5s ease;
+  transition: all 0.2s ease, transform 0.5s ease;
+  transition: all 0.2s ease, transform 0.5s ease, -webkit-transform 0.5s ease;
+}
+
+.header .header__navbar__menu .header__navbar__menu__li__a:hover {
+  font-weight: bold;
+  background-color: #7A542E;
+  color: #F7F7FF;
+  border-radius: 5px;
+  padding: 5px 15px;
+  margin: 0 5px;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.header .header__navbar__menu .header__navbar__menu__li__a:active {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+.header .header__navbar__menu .header__navbar__menu__li__a--actualPage {
+  font-weight: bold;
+  /* Pone en negrita la sección actual en el nav */
+  color: #7A542E;
+}
+
+.header .header__navbar__menuCollapse {
+  height: 20px;
+}
+
+.main {
+  width: 80vw;
+  padding-top: 20px;
+  margin: 0 auto;
+  margin-bottom: 90px;
+}
+
+.footer {
+  z-index: 5;
+  position: fixed;
+  /* Hago que el footer este siempre en el pie de página */
+  bottom: 0;
+  background-color: #0A122A;
+  padding: 0 15px;
+  width: 100%;
+}
+
+.footer .footer__redes {
+  height: 20px;
+  margin: 10px 0;
+  margin-right: 5px;
+}
+
+/* index.html */
+.main--index {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "foto foto" "mision vision";
+}
+
+.main--index .main__principal {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: foto;
+  padding-top: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+}
+
+.main--index .main__principal .main__principal__imageBurger {
+  height: 20vw;
+  min-height: 200px;
+}
+
+.main--index .main__principal .main__principal__textoPrincipal {
+  display: inline-block;
+  width: 50%;
+  padding: 5px 20px;
+}
+
+.main--index .main__mision {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: mision;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.main--index .main__mision h2 {
+  font-size: 25px;
+}
+
+.main--index .main__vision {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: vision;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.main--index .main__vision h2 {
+  font-size: 25px;
+}
+
+/* menu.html */
+.main .main__menus {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  margin-bottom: 50px;
+}
+
+.main .main__menus .main__menus__comida {
+  width: 300px;
+  overflow: hidden;
+  /* Para lograr que ambos menús estén al mismo nivel */
+  padding: 10px;
+}
+
+.main .main__menus .main__menus__comida__submenu {
+  margin-left: 35px;
+  padding: 10px 0;
+  list-style-image: url("../img/list-item-icon.svg");
+}
+
+.main .main__menus .main__menus__comida__submenu li {
+  color: #7A542E;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 18px;
+  padding: 3px 0;
+}
+
+.main .main__menus .main__menus__bebidas {
+  width: 300px;
+  overflow: hidden;
+  /* Para lograr que ambos menús estén al mismo nivel */
+  padding: 10px;
+}
+
+.main .main__menus .main__menus__bebidas__submenu {
+  margin-left: 35px;
+  padding: 10px 0;
+  list-style-image: url("../img/list-item-icon.svg");
+}
+
+.main .main__menus .main__menus__bebidas__submenu li {
+  color: #7A542E;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 18px;
+  padding: 3px 0;
+}
+
+/* locales.html */
+.main__locales {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 20px;
+}
+
+.main__locales .main__locales__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 20px;
+  background-color: #F7F7FF;
+}
+
+.main__locales .main__locales__item .main__locales__item__local {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  width: 20vw;
+  margin: 10px;
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+}
+
+.main__locales .main__locales__item .main__locales__item__local .main__locales__item__local__img {
+  height: 20vw;
+  min-height: 100px;
+  width: 20vw;
+  min-width: 100px;
+}
+
+.main__locales .main__locales__item .main__locales__item__local:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.main__locales .main__locales__control {
+  background-color: #7A542E;
+  width: 100px;
+}
+
+.main__locales--tablet {
+  display: none;
+}
+
+.main__locales--celular {
+  display: none;
+}
+
+/* nosotros.html */
+.main--nosotros {
+  padding-top: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+}
+
+.main--nosotros .main__fotoCocina {
+  height: 25vw;
+  min-height: 200px;
+}
+
+.main--nosotros .main__historia {
+  padding: 0px 10px;
+}
+
+/* contacto.html */
+.main--contacto {
+  width: 212px;
+}
+
+.main--contacto .main__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  margin: 0 auto;
+}
+
+.main--contacto .main__form input {
+  display: inline;
+  color: #7A542E;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-weight: bold;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  background-color: transparent;
+}
+
+.main--contacto .main__form label {
+  color: #7A542E;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-weight: bold;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.main--contacto .main__form .main__form__text {
+  width: 200px;
+  font-size: 18px;
+  margin: 10px 0;
+  padding: 5px;
+  border-radius: 10px;
+  border: 1px solid #7A542E;
+}
+
+.main--contacto .main__form .main__form__div {
+  display: inline;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.main--contacto .main__form .main__form__div .main__form__div__asuntoLabel {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.main--contacto .main__form .main__form__div .main__form__div__asuntoSelect {
+  color: #7A542E;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 18px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #7A542E;
+}
+
+.main--contacto .main__form .main__form__div .main__form__div__asuntoSelect option {
+  color: #7A542E;
+  font-family: "Open Sans Condensed", sans-serif;
+}
+
+.main--contacto .main__form .main__form__div .main__form__div__btn {
+  font-size: 16px;
+  width: 100px;
+  margin: 5px 0;
+  background-color: #7A542E;
+  color: #F7F7FF;
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
+}
+
+.main--contacto .main__form .main__form__textarea {
+  width: 200px;
+  height: 100px;
+  text-align: start;
+  padding: 5px;
+  font-size: 18px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: 1px solid #7A542E;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 16px;
+  background-color: transparent;
+}
+
+/* Para vista en tablet */
+@media only screen and (min-width: 600px) and (max-width: 960px) {
+  p {
+    font-size: 18px;
+  }
+  h1 {
+    font-size: 30px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+  .header {
+    padding: 5px 10px;
+  }
+  .header .header__navbar__a {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .header .header__navbar__a .header__navbar__a__logo {
+    height: 10vh;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .header .header__navbar__menu {
+    padding: 10px;
+  }
+  .footer {
+    padding: 5px 20px;
+  }
+  /* index.html */
+  .main--index {
+        grid-template-areas: "foto" "mision" "vision";
+  }
+  /* locales.html */
+  .main__locales {
+    display: none;
+  }
+  .main__locales--tablet {
+    display: inherit;
+  }
+  .main__locales--celular {
+    display: none;
+  }
+}
+
+/* Para vista en celular */
+@media only screen and (max-width: 600px) {
+  .header .header__navbar__a {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .header .header__navbar__a .header__navbar__a__logo {
+    width: 10vw;
+    height: 10vw;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .header .header__navbar__menu {
+    margin-top: 10px;
+    width: 90vw;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    -ms-flex-line-pack: justify;
+        align-content: space-between;
+    padding: 0;
+  }
+  .header .header__navbar__menu li {
+    padding: 0;
+    margin: 0;
+  }
+  .header .header__navbar__menu .header__navbar__menu__li__a {
+    padding: 0;
+  }
+  .footer {
+    padding: 0 20px;
+  }
+  .footer .footer__redes {
+    height: 30px;
+    margin: 10px 0;
+    margin-right: 5px;
+  }
+  /* index.html */
+  .main--index {
+        grid-template-areas: "foto" "mision" "vision";
+  }
+  .main--index .main__principal {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-line-pack: stretch;
+        align-content: stretch;
+    margin: 0;
+  }
+  .main--index .main__principal .main__principal__imageBurger {
+    height: 80vw;
+  }
+  .main--index .main__principal .main__principal__textoPrincipal {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+    padding: 0;
+    padding-top: 10px;
+  }
+  .main--index .main__principal .main__principal__textoPrincipal p {
+    width: 80vw;
+  }
+  .main--index .main__mision, .main--index .main__vision {
+    padding: 10px 0;
+  }
+  /* nosotros.html */
+  .main--nosotros {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+  }
+  .main--nosotros .main__fotoCocina {
+    height: 80vw;
+  }
+  .main--nosotros .main__historia {
+    padding: 10px 0px;
+  }
+  /* locales.html */
+  .main__locales {
+    display: none;
+  }
+  .main__locales--tablet {
+    display: none;
+  }
+  .main__locales--celular {
+    display: inherit;
+  }
+  .main__locales--celular {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+  }
+  .main__locales--celular .main__locales__local {
+    pointer-events: none;
+    /* Para que no haga zoom al tocarlo por el efecto :hover */
+  }
+  .main__locales--celular .main__locales__local .main__locales__local__img {
+    height: 70vw;
+    min-height: 200px;
+    width: 70vw;
+    min-width: 200px;
+  }
+  .main__locales--celular .main__locales__local h2 {
+    padding-top: 10px;
+    font-size: 25px;
+  }
+  .main__locales--celular .main__locales__local p {
+    font-size: 20px;
+  }
+}
+/*# sourceMappingURL=estilo.css.map */

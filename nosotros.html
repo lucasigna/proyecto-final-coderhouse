@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Palabras clave -->
+    <meta name="keywords" content="Hamburguesa, Bar, Comida, Salida, Cerveza, Birra">
+    <!-- Descripción -->
+    <meta name="description" content="Conocenos mejor">
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
+    <!-- CSS Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <!-- Mi CSS -->
+    <link rel="stylesheet" href="estilos/estilo.css">
+    <title>Nuestra historia</title>
+</head>
+<body>
+    <header class="header">
+        <nav class="header__navbar navbar navbar-expand-md navbar-inverse">
+            <div class="container">
+                <a class="header__navbar__a navbar-brand" href="index.html"><img class="header__navbar__a__logo" src="img/logo.svg"></a><!--Logo-->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#target" aria-controls="target" aria-expanded="false" aria-label="Toggle navigation">
+                    <img class="header__navbar__menuCollapse" src="img/menu.svg" alt="">
+                </button>            
+                <div class="collapse navbar-collapse" id="target">
+                    <ul class="header__navbar__menu nav navbar-nav ml-auto">
+                        <li class="nav-item"><a class="header__navbar__menu__li__a nav-link" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="header__navbar__menu__li__a nav-link" href="menu.html">Menú</a></li>
+                        <li class="nav-item"><a class="header__navbar__menu__li__a nav-link" href="locales.html">Locales</a></li>
+                        <li class="nav-item"><a class="header__navbar__menu__li__a header__navbar__menu__li__a--actualPage nav-link" href="nosotros.html">Nosotros</a></li>
+                        <li class="nav-item"><a class="header__navbar__menu__li__a nav-link" href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>   
+    </header>
+    <main class="main main--nosotros">
+        <img class="main__fotoCocina" src="img/cocina.png" alt="cocina">
+        <section class="main__historia">
+            <h1>Nuestra historia</h1>
+            <p>Familia con tradición gastronómica, empezamos el emprendimiento con enfoque en el cliente. Desde 1998 sirviendo comida casera y las mejores hamburguesas.</p>
+        </section>
+    </main>
+    <footer class="footer">
+        <a href=""><img class="footer__redes" src="img/instagram.svg"></a><!--Instagram-->
+        <a href=""><img class="footer__redes" src="img/facebook.svg"></a><!--Facebook-->
+        <a href=""><img class="footer__redes" src="img/twitter.svg"></a><!--Twitter-->
+    </footer>
+    <!-- JavaScript Bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

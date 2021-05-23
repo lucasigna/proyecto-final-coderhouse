@@ -1,0 +1,507 @@
+/* Variables */
+
+@import "colores";
+@import "tipografia";
+
+/* Mixins */
+
+@mixin texto($color,$font,$size,$weight) {
+    color: $color;
+    font-family: $font;
+    font-weight: $weight;
+    font-size: $size;
+}
+
+@mixin flex($direction,$wrap) {
+    display: flex;
+    flex-flow: $direction $wrap;
+}
+
+/* Para vista en PC */
+
+/* Estilos generales */
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: $color-blanco;
+}
+
+p{
+    @include texto($color-marron, $fuente, 18px, normal);
+}
+
+h1{
+    @include texto($color-marron, $fuente, 30px, bold);
+}
+
+h2{
+    @include texto($color-marron, $fuente, 20px, bold);
+}
+
+.container{
+    padding: 0;
+    margin: 0;
+}
+
+.header{
+    z-index: 5; /* Para que el header quede por encima de todo */
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: $color-blanco;
+    border-bottom: 1px solid $color-marron;
+    .header__navbar{
+        .header__navbar__a{
+            transition: transform 0.2s ease;
+            &__logo{
+                height: 80px;
+                transition: transform 0.2s ease;
+                &:hover{
+                    transform: scale(1.2);
+                }
+            }
+            &:active{
+                transform: rotate(30deg); /* Pequeño movimiento al hacer click para generar interactividad */
+            }
+        }
+    }
+    .header__navbar__menu{
+        @include flex(row, nowrap);
+        justify-content: space-between;
+        list-style: none;
+        padding: 25px 30px;
+        margin: 0;
+        .header__navbar__menu__li__a{
+            display: inline-block; /* Agrego esto para poder aplicar el transform en el hover */
+            text-align: center;
+            color: $color-marron;
+            font-family: $fuente;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 5px 20px;
+            transition: all 0.2s ease, transform 0.5s ease;
+            
+            &:hover{
+                font-weight: bold;
+                background-color: $color-marron;
+                color: $color-blanco;
+                border-radius: 5px;
+                padding: 5px 15px;
+                margin: 0 5px;
+                transform: scale(1.05);
+            }
+            &:active{
+                transform: scale(0.9);
+            }
+        }
+        .header__navbar__menu__li__a--actualPage{
+            font-weight: bold; /* Pone en negrita la sección actual en el nav */
+            color: $color-marron;
+        }
+    }
+    .header__navbar__menuCollapse{
+        height: 20px;
+    }
+}
+
+.main{
+    width: 80vw;
+    padding-top: 20px;
+    margin: 0 auto;
+    margin-bottom: 90px;
+}
+
+.footer{
+    z-index: 5;
+    position: fixed; /* Hago que el footer este siempre en el pie de página */
+    bottom: 0;
+    background-color: $color-azul;
+    padding: 0 15px;
+    width: 100%;
+    .footer__redes{    
+        height: 20px;
+        margin: 10px 0;
+        margin-right: 5px;
+    }
+}
+
+/* index.html */
+
+.main--index{
+    display: grid;
+    grid-template-areas: "foto foto" "mision vision";
+    .main__principal{
+        grid-area: foto;
+        padding-top: 25px;
+        @include flex(row, nowrap);
+        .main__principal__imageBurger{
+            height: 20vw;
+            min-height: 200px;
+        }
+        .main__principal__textoPrincipal{
+            display: inline-block;
+            width: 50%;
+            padding: 5px 20px;
+        }
+    }
+    .main__mision{
+        grid-area: mision;
+        padding: 10px;
+        margin-top: 20px;
+        h2{
+            font-size: 25px;
+        }
+    }
+    .main__vision{
+        grid-area: vision;
+        padding: 10px;
+        margin-top: 20px;
+        h2{
+            font-size: 25px;
+        }
+    }
+}
+
+/* menu.html */
+
+.main{
+    .main__menus{
+        @include flex(row, wrap);
+        margin-bottom: 50px;
+        .main__menus__comida{
+            width: 300px;
+            overflow: hidden; /* Para lograr que ambos menús estén al mismo nivel */
+            padding: 10px;
+            &__submenu{
+                margin-left: 35px;
+                padding: 10px 0;
+                list-style-image: url("../img/list-item-icon.svg");
+                li{
+                    color: $color-marron;
+                    font-family: $fuente;
+                    font-size: 18px;
+                    padding: 3px 0;
+                }
+            }
+        }
+        .main__menus__bebidas{
+            width: 300px;
+            overflow: hidden; /* Para lograr que ambos menús estén al mismo nivel */
+            padding: 10px;
+            &__submenu{
+                margin-left: 35px;
+                padding: 10px 0;
+                list-style-image: url("../img/list-item-icon.svg");
+                li{
+                    color: $color-marron;
+                    font-family: $fuente;
+                    font-size: 18px;
+                    padding: 3px 0;
+                }
+            }
+        }
+    }
+}
+
+/* locales.html */
+
+.main__locales{
+    @include flex(row, nowrap);
+    justify-content: center;
+    padding: 20px;
+    .main__locales__item{
+        @include flex(row, nowrap);
+        justify-content: center;
+        padding-top: 20px;
+        background-color: $color-blanco;
+        .main__locales__item__local{
+            @include flex(column, wrap);
+            width: 20vw;
+            margin: 10px;
+            transition: transform 0.2s ease;
+            .main__locales__item__local__img{
+                height: 20vw;
+                min-height: 100px;
+                width: 20vw;
+                min-width: 100px;
+            }
+            &:hover{
+                transform: scale(1.1);
+            }
+        }
+    }
+    .main__locales__control{
+        background-color: $color-marron;
+        width: 100px;
+    }
+}
+
+.main__locales--tablet{
+    display: none;
+}
+
+.main__locales--celular{
+    display: none;
+}
+
+/* nosotros.html */
+
+.main--nosotros{
+    padding-top: 25px;
+    @include flex(row, nowrap);
+    .main__fotoCocina{
+        height: 25vw;
+        min-height: 200px;
+    }
+    .main__historia{
+        padding: 0px 10px;
+    }
+}
+
+/* contacto.html */
+
+.main--contacto{
+    width: 212px;
+    .main__form{
+        @include flex(column, nowrap);
+        margin: 0 auto;
+        input{
+            display: inline;
+            color: $color-marron;
+            font-family: $fuente;
+            font-weight: bold;
+            align-self: center;
+            background-color: transparent;
+        }
+        label{
+            color: $color-marron;
+            font-family: $fuente;
+            font-weight: bold;
+            align-self: center;
+        }
+        .main__form__text{
+            width: 200px;
+            font-size: 18px;
+            margin: 10px 0;
+            padding: 5px;
+            border-radius: 10px;
+            border: 1px solid $color-marron;
+        }
+        .main__form__div{
+            display: inline;
+            align-self: center;
+            .main__form__div__asuntoLabel{
+                font-size: 18px;
+                margin: 10px 0;
+            }
+            .main__form__div__asuntoSelect{
+                color: $color-marron;
+                font-family: $fuente;
+                font-size: 18px;
+                margin: 10px 0;
+                border-radius: 5px;
+                border: 1px solid $color-marron;
+                option{
+                    color: $color-marron;
+                    font-family: $fuente;
+                }
+            }
+            .main__form__div__btn{
+                font-size: 16px;
+                width: 100px;
+                margin: 5px 0;
+                background-color: $color-marron;
+                color: $color-blanco;
+                border-radius: 5px;
+                border: none;
+                padding: 5px;
+            }   
+        }
+        .main__form__textarea{
+            width: 200px;
+            height: 100px;
+            text-align: start;
+            padding: 5px;
+            font-size: 18px;
+            margin: 10px 0;
+            border-radius: 10px;
+            border: 1px solid $color-marron;
+            font-family: $fuente;
+            font-size: 16px;
+            background-color: transparent;
+        }
+    }
+}
+
+/* Para vista en tablet */
+
+@media only screen and (min-width: 600px) and (max-width: 960px) {
+
+    p{
+        font-size: 18px;
+    }
+    
+    h1{
+        font-size: 30px;
+    }
+    
+    h2{
+        font-size: 20px;
+    }
+
+    .header{
+        padding: 5px 10px;
+        .header__navbar__a{
+            align-self: center;
+            .header__navbar__a__logo{
+                height: 10vh;
+                align-self: center;
+            }
+        }           
+        .header__navbar__menu{
+            padding: 10px;
+        }
+    }
+
+    .footer{
+        padding: 5px 20px;
+    }
+
+    /* index.html */
+
+    .main--index{
+        grid-template-areas: "foto" "mision" "vision";
+    }
+
+    /* locales.html */
+
+    .main__locales{
+        display: none;
+    }
+    
+    .main__locales--tablet{
+        display: inherit;
+    }
+
+    .main__locales--celular{
+        display: none;
+    }
+
+}
+
+/* Para vista en celular */
+
+@media only screen and (max-width: 600px) {
+
+    .header{
+        .header__navbar__a{
+            align-self: center;
+            .header__navbar__a__logo{
+                width: 10vw;
+                height: 10vw;
+                align-self: center;
+            }
+        }
+        .header__navbar__menu{
+            margin-top: 10px;
+            width: 90vw;
+            align-self: center;
+            align-content: space-between;
+            padding: 0;
+            li{
+                padding: 0;
+                margin: 0;
+            }
+            .header__navbar__menu__li__a{
+                padding: 0;
+            }
+        }
+    }
+
+    .footer{
+        padding: 0 20px;
+        .footer__redes{
+            height: 30px;
+            margin: 10px 0;
+            margin-right: 5px;
+        }
+    }
+
+    /* index.html */
+
+    .main--index{
+        grid-template-areas: "foto" "mision" "vision";
+        .main__principal{
+            flex-direction: column;
+            align-content: stretch;
+            margin: 0;
+            .main__principal__imageBurger{
+                height: 80vw;
+            }
+            .main__principal__textoPrincipal{
+                align-self: flex-start;
+                padding: 0;
+                padding-top: 10px;
+                p{
+                    width: 80vw;
+                }
+            }
+        }
+        .main__mision, .main__vision{
+            padding: 10px 0;
+        }
+    }
+
+    /* nosotros.html */
+
+    .main--nosotros{
+        @include flex(row, wrap);
+        .main__fotoCocina{
+            height: 80vw;
+        }
+        .main__historia{
+            padding: 10px 0px;
+        }
+    }
+
+    /* locales.html */
+
+    .main__locales{
+        display: none;
+    }
+    
+    .main__locales--tablet{
+        display: none;
+    }
+
+    .main__locales--celular{
+        display: inherit;
+    }
+
+    .main__locales--celular{
+        @include flex(column, nowrap);
+        .main__locales__local{
+            pointer-events: none; /* Para que no haga zoom al tocarlo por el efecto :hover */
+            .main__locales__local__img{
+                height: 70vw;
+                min-height: 200px;
+                width: 70vw;
+                min-width: 200px;
+            }
+            h2{
+                padding-top: 10px;
+                font-size: 25px;
+            }
+            p{
+                font-size: 20px;
+            }
+        }
+    }
+
+}

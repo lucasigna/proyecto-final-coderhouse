@@ -452,6 +452,9 @@ h2 {
   font-family: "Open Sans Condensed", sans-serif;
   font-size: 16px;
   background-color: transparent;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 /* Para vista en tablet */

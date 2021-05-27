@@ -267,6 +267,10 @@ h2 {
 }
 
 /* locales.html */
+.main--locales {
+  width: 90vw;
+}
+
 .main__locales {
   display: -webkit-box;
   display: -ms-flexbox;

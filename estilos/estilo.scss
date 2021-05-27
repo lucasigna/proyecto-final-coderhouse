@@ -211,6 +211,10 @@ h2{
 
 /* locales.html */
 
+.main--locales{
+    width: 90vw;
+}
+
 .main__locales{
     @include flex(row, nowrap);
     justify-content: center;

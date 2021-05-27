@@ -420,12 +420,14 @@ h2 {
 }
 
 .main--contacto .main__form .main__form__div .main__form__div__asuntoSelect {
+  background-color: transparent;
   color: #7A542E;
   font-family: "Open Sans Condensed", sans-serif;
   font-size: 18px;
   margin: 10px 0;
   border-radius: 5px;
   border: 1px solid #7A542E;
+  font-weight: bold;
 }
 
 .main--contacto .main__form .main__form__div .main__form__div__asuntoSelect option {
@@ -459,6 +461,7 @@ h2 {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+  font-weight: bold;
 }
 
 /* Para vista en tablet */

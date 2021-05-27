@@ -305,12 +305,14 @@ h2{
                 margin: 10px 0;
             }
             .main__form__div__asuntoSelect{
+                background-color: transparent;
                 color: $color-marron;
                 font-family: $fuente;
                 font-size: 18px;
                 margin: 10px 0;
                 border-radius: 5px;
                 border: 1px solid $color-marron;
+                font-weight: bold;
                 option{
                     color: $color-marron;
                     font-family: $fuente;
@@ -340,6 +342,7 @@ h2{
             font-size: 16px;
             background-color: transparent;
             align-self: center;
+            font-weight: bold;
         }
     }
 }

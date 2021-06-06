@@ -364,11 +364,23 @@ h2 {
 
 /* contacto.html */
 .main--contacto {
-  width: 212px;
   margin: 0 auto;
+  width: 70vw;
 }
 
-.main--contacto .main__form {
+.main--contacto .flexContainerContacto {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.main--contacto .flexContainerContacto .main__form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -376,10 +388,9 @@ h2 {
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
-  margin: 0 auto;
 }
 
-.main--contacto .main__form input {
+.main--contacto .flexContainerContacto .main__form input {
   display: inline;
   color: #7A542E;
   font-family: "Open Sans Condensed", sans-serif;
@@ -390,7 +401,7 @@ h2 {
   background-color: transparent;
 }
 
-.main--contacto .main__form label {
+.main--contacto .flexContainerContacto .main__form label {
   color: #7A542E;
   font-family: "Open Sans Condensed", sans-serif;
   font-weight: bold;
@@ -399,7 +410,7 @@ h2 {
       align-self: center;
 }
 
-.main--contacto .main__form .main__form__text {
+.main--contacto .flexContainerContacto .main__form .main__form__text {
   width: 200px;
   font-size: 18px;
   margin: 10px 0;
@@ -408,19 +419,19 @@ h2 {
   border: 1px solid #7A542E;
 }
 
-.main--contacto .main__form .main__form__div {
+.main--contacto .flexContainerContacto .main__form .main__form__div {
   display: inline;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
 }
 
-.main--contacto .main__form .main__form__div .main__form__div__asuntoLabel {
+.main--contacto .flexContainerContacto .main__form .main__form__div .main__form__div__asuntoLabel {
   font-size: 18px;
   margin: 10px 0;
 }
 
-.main--contacto .main__form .main__form__div .main__form__div__asuntoSelect {
+.main--contacto .flexContainerContacto .main__form .main__form__div .main__form__div__asuntoSelect {
   background-color: transparent;
   color: #7A542E;
   font-family: "Open Sans Condensed", sans-serif;
@@ -431,12 +442,12 @@ h2 {
   font-weight: bold;
 }
 
-.main--contacto .main__form .main__form__div .main__form__div__asuntoSelect option {
+.main--contacto .flexContainerContacto .main__form .main__form__div .main__form__div__asuntoSelect option {
   color: #7A542E;
   font-family: "Open Sans Condensed", sans-serif;
 }
 
-.main--contacto .main__form .main__form__div .main__form__div__btn {
+.main--contacto .flexContainerContacto .main__form .main__form__div .main__form__div__btn {
   font-size: 16px;
   width: 100px;
   margin: 5px 0;
@@ -447,7 +458,7 @@ h2 {
   padding: 5px;
 }
 
-.main--contacto .main__form .main__form__textarea {
+.main--contacto .flexContainerContacto .main__form .main__form__textarea {
   width: 200px;
   height: 100px;
   text-align: start;
@@ -463,6 +474,25 @@ h2 {
       -ms-grid-row-align: center;
       align-self: center;
   font-weight: bold;
+}
+
+.main--contacto .flexContainerContacto .main__imgContacto {
+  overflow: hidden;
+  border-radius: 20px;
+  height: 50vh;
+}
+
+.main--contacto .flexContainerContacto .main__imgContacto__img {
+  height: 50vh;
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+}
+
+.main--contacto .flexContainerContacto .main__imgContacto__img:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 /* Para vista en tablet */
@@ -508,6 +538,14 @@ h2 {
     display: inherit;
   }
   .main__locales--celular {
+    display: none;
+  }
+  /* contacto.html */
+  .main--contacto {
+    width: 212px;
+    margin-bottom: 90px;
+  }
+  .main--contacto .main__imgContacto {
     display: none;
   }
 }
@@ -630,6 +668,13 @@ h2 {
   }
   .main__locales--celular .main__locales__local p {
     font-size: 20px;
+  }
+  /* contacto.html */
+  .main--contacto {
+    width: 212px;
+  }
+  .main--contacto .main__imgContacto {
+    display: none;
   }
 }
 /*# sourceMappingURL=estilo.css.map */

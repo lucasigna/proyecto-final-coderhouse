@@ -41,29 +41,34 @@
     </header>
     <main class="main main--contacto">
         <h1>¡Déjanos tu mensaje!</h1>
-        <form class="main__form" action="" method="GET">
-            <input class="main__form__text" type="text" placeholder="Tu nombre" name="nombre">
-            <input class="main__form__text" type="email" placeholder="Tu correo electrónico" name="mail">
-            <div class="main__form__div">
-                <label class="main__form__div__asuntoLabel" for="asunto">Asunto:</label>
-                <select class="main__form__div__asuntoSelect" name="asunto" id="asunto">
-                    <option value="S">Sugerencias</option>
-                    <option value="P">Problemas</option>
-                    <option value="F">Franquicia</option>
-                    <option value="E">Empleo</option>
-                    <option value="O">Otro</option>
-                </select>
+        <div class="flexContainerContacto">
+            <form class="main__form" action="" method="GET">
+                <input class="main__form__text" type="text" placeholder="Tu nombre" name="nombre">
+                <input class="main__form__text" type="email" placeholder="Tu correo electrónico" name="mail">
+                <div class="main__form__div">
+                    <label class="main__form__div__asuntoLabel" for="asunto">Asunto:</label>
+                    <select class="main__form__div__asuntoSelect" name="asunto" id="asunto">
+                        <option value="S">Sugerencias</option>
+                        <option value="P">Problemas</option>
+                        <option value="F">Franquicia</option>
+                        <option value="E">Empleo</option>
+                        <option value="O">Otro</option>
+                    </select>
+                </div>
+                <textarea class="main__form__textarea" name="mensaje" placeholder="Tu mensaje" cols="30" rows="4"></textarea>
+                <div class="main__form__div">
+                    <input class="main__form__div__btn" type="reset" value="Borrar todo">
+                    <input class="main__form__div__btn" type="submit" value="Enviar">
+                </div>
+                <div class="main__form__div">
+                    <input class="main__form__div__checkbox" type="checkbox" name="news">
+                    <label for="news">Quiero suscribirme al newsletter</label>
+                </div>
+            </form>
+            <div class="main__imgContacto">
+                <img class="main__imgContacto__img" src="img/contact.png" alt="">
             </div>
-            <textarea class="main__form__textarea" name="mensaje" placeholder="Tu mensaje" cols="30" rows="4"></textarea>
-            <div class="main__form__div">
-                <input class="main__form__div__btn" type="reset" value="Borrar todo">
-                <input class="main__form__div__btn" type="submit" value="Enviar">
-            </div>
-            <div class="main__form__div">
-                <input class="main__form__div__checkbox" type="checkbox" name="news">
-                <label for="news">Quiero suscribirme al newsletter</label>
-            </div>
-        </form>
+        </div>
     </main>
     <footer class="footer">
         <a href=""><img class="footer__redes" src="img/instagram.svg"></a><!--Instagram-->

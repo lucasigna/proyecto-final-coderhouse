@@ -271,79 +271,94 @@ h2{
 /* contacto.html */
 
 .main--contacto{
-    width: 212px;
     margin: 0 auto;
-    .main__form{
-        @include flex(column, nowrap);
-        margin: 0 auto;
-        input{
-            display: inline;
-            color: $color-marron;
-            font-family: $fuente;
-            font-weight: bold;
-            align-self: center;
-            background-color: transparent;
-        }
-        label{
-            color: $color-marron;
-            font-family: $fuente;
-            font-weight: bold;
-            align-self: center;
-        }
-        .main__form__text{
-            width: 200px;
-            font-size: 18px;
-            margin: 10px 0;
-            padding: 5px;
-            border-radius: 10px;
-            border: 1px solid $color-marron;
-        }
-        .main__form__div{
-            display: inline;
-            align-self: center;
-            .main__form__div__asuntoLabel{
-                font-size: 18px;
-                margin: 10px 0;
-            }
-            .main__form__div__asuntoSelect{
-                background-color: transparent;
+    width: 70vw;
+    .flexContainerContacto{
+        @include flex(row, nowrap);
+        justify-content: space-around;
+        .main__form{
+            @include flex(column, nowrap);
+            input{
+                display: inline;
                 color: $color-marron;
                 font-family: $fuente;
+                font-weight: bold;
+                align-self: center;
+                background-color: transparent;
+            }
+            label{
+                color: $color-marron;
+                font-family: $fuente;
+                font-weight: bold;
+                align-self: center;
+            }
+            .main__form__text{
+                width: 200px;
                 font-size: 18px;
                 margin: 10px 0;
-                border-radius: 5px;
+                padding: 5px;
+                border-radius: 10px;
                 border: 1px solid $color-marron;
-                font-weight: bold;
-                option{
+            }
+            .main__form__div{
+                display: inline;
+                align-self: center;
+                .main__form__div__asuntoLabel{
+                    font-size: 18px;
+                    margin: 10px 0;
+                }
+                .main__form__div__asuntoSelect{
+                    background-color: transparent;
                     color: $color-marron;
                     font-family: $fuente;
+                    font-size: 18px;
+                    margin: 10px 0;
+                    border-radius: 5px;
+                    border: 1px solid $color-marron;
+                    font-weight: bold;
+                    option{
+                        color: $color-marron;
+                        font-family: $fuente;
+                    }
+                }
+                .main__form__div__btn{
+                    font-size: 16px;
+                    width: 100px;
+                    margin: 5px 0;
+                    background-color: $color-marron;
+                    color: $color-blanco;
+                    border-radius: 5px;
+                    border: none;
+                    padding: 5px;
+                }   
+            }
+            .main__form__textarea{
+                width: 200px;
+                height: 100px;
+                text-align: start;
+                padding: 5px;
+                font-size: 18px;
+                margin: 10px 0;
+                border-radius: 10px;
+                border: 1px solid $color-marron;
+                font-family: $fuente;
+                font-size: 16px;
+                background-color: transparent;
+                align-self: center;
+                font-weight: bold;
+            }
+        }
+        .main__imgContacto{
+            overflow: hidden;
+            border-radius: 20px;
+            height: 50vh;
+            &__img{
+                height: 50vh;
+                transition: transform 0.2s ease;
+                &:hover{
+                    transform: scale(1.2);
                 }
             }
-            .main__form__div__btn{
-                font-size: 16px;
-                width: 100px;
-                margin: 5px 0;
-                background-color: $color-marron;
-                color: $color-blanco;
-                border-radius: 5px;
-                border: none;
-                padding: 5px;
-            }   
-        }
-        .main__form__textarea{
-            width: 200px;
-            height: 100px;
-            text-align: start;
-            padding: 5px;
-            font-size: 18px;
-            margin: 10px 0;
-            border-radius: 10px;
-            border: 1px solid $color-marron;
-            font-family: $fuente;
-            font-size: 16px;
-            background-color: transparent;
-            align-self: center;
-            font-weight: bold;
         }
     }
 }
@@ -400,6 +415,16 @@ h2{
 
     .main__locales--celular{
         display: none;
+    }
+
+    /* contacto.html */
+
+    .main--contacto{
+        width: 212px;
+        margin-bottom: 90px;
+        .main__imgContacto{
+            display: none;
+        }
     }
 
 }
@@ -512,5 +537,15 @@ h2{
             }
         }
     }
+
+    /* contacto.html */
+
+    .main--contacto{
+        width: 212px;
+        .main__imgContacto{
+            display: none;
+        }
+    }
+    
 
 }

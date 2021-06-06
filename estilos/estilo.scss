@@ -272,6 +272,7 @@ h2{
 
 .main--contacto{
     width: 212px;
+    margin: 0 auto;
     .main__form{
         @include flex(column, nowrap);
         margin: 0 auto;

@@ -365,6 +365,7 @@ h2 {
 /* contacto.html */
 .main--contacto {
   width: 212px;
+  margin: 0 auto;
 }
 
 .main--contacto .main__form {
